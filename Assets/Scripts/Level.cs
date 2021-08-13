@@ -1,5 +1,3 @@
-
-using System;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -17,7 +15,7 @@ public class Level : MonoBehaviour
     [SerializeField] private int max;
 
     private float validValue;
-    
+
     private void Start()
     {
         StartNewRound();
