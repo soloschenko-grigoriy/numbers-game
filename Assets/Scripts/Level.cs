@@ -1,4 +1,3 @@
-using DefaultNamespace;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -21,17 +20,19 @@ public class Level : MonoBehaviour
     [SerializeField] private int clockSecondThreshold = 25;
 
     private ScoreRate scoreRate;
-    
     private float validValue;
+    private Stats stats;
 
     private void Start()
     {
+        stats = SaveLoadLocalFile.Load();
+        
         StartNewRound();
         Number.RaiseClickEvent += OnValueSelected;
         Clock.RaiseReachedZero += OnClockEnds;
         Clock.RaiseReachedFirstThreshold += OnReachedFirstThreshold;
         Clock.RaiseReachedSecondThreshold += OnReachedSecondThreshold;
-        score.SetInitScore(0); // @todo to load from savings 
+        score.SetInitScore(stats.score); 
     }
 
     private void StartNewRound()
@@ -50,6 +51,7 @@ public class Level : MonoBehaviour
         }
 
         score.IncreaseScore(scoreRate);
+        UpdateAndSaveStats();
         StartNewRound();
     }
     
@@ -66,7 +68,14 @@ public class Level : MonoBehaviour
     private void OnClockEnds()
     {
         score.DecreaseScore();
+        UpdateAndSaveStats();
         StartNewRound();
+    }
+
+    private void UpdateAndSaveStats()
+    {
+        stats.score = score.Value;
+        SaveLoadLocalFile.Save(stats);
     }
     
     private void OnDisable()
