@@ -48,6 +48,11 @@ public static class SaveLoadLocalFile
             File.Delete(path);
         }
     }
+
+    public static bool HasSavings()
+    {
+        return File.Exists(path);
+    }
     
     private static void AddText(FileStream fs, string value)  
     {  

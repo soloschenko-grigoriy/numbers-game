@@ -1,12 +1,9 @@
 using UnityEngine;
 
-namespace DefaultNamespace
+public class ExitBtn : MonoBehaviour
 {
-    public class ExitBtn : MonoBehaviour
+    public void OnClick()
     {
-        public void OnClick()
-        {
-            Application.Quit();
-        }
+        Application.Quit();
     }
 }
