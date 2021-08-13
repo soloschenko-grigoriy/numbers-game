@@ -9,6 +9,10 @@ public class Number : MonoBehaviour
     private void Awake()
     {
         text = GetComponentInChildren<TextMeshProUGUI>();
-        text.text = Random.Range(0, 9999).ToString();
+    }
+
+    public void SetValue(float value)
+    {
+        text.text = value.ToString();
     }
 }

@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class Gameplay : MonoBehaviour
 {
-    [SerializeField][Range(4, 16)] 
-    private int numberOfNumbers = 12;
-
     [SerializeField]
     private RectTransform container;
 
@@ -12,12 +9,14 @@ public class Gameplay : MonoBehaviour
     private Number numberPrefab;
     
     // Start is called before the first frame update
-    private void Start()
+    public void Init(int numberOfNumbers, float validValue)
     {
+        var validIndex = Random.Range(0, numberOfNumbers);
         for (var i = 0; i < numberOfNumbers; i++)
         {
-            Instantiate(numberPrefab, new Vector3(0, 0, 0), Quaternion.identity)
-                .transform.SetParent(container);
+            var number = Instantiate(numberPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            number.transform.SetParent(container);
+            number.SetValue(i == validIndex ? validValue : Random.Range(0, 9999));
         }
     }
 
