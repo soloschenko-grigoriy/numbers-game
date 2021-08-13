@@ -1,32 +1,45 @@
+
 using System;
 using UnityEngine;
 
-namespace DefaultNamespace
+public class Level : MonoBehaviour
 {
-    public class Level : MonoBehaviour
-    {
-        [SerializeField]
-        private Operator[] supportedOperators = default;
+    [SerializeField] private Operator[] supportedOperators = default;
+
+    [SerializeField] [Range(4, 16)] private int numberOfNumbers = 12;
+
+    [SerializeField] private NumbersContainer numbersContainer;
+
+    [SerializeField] private Formula formula;
+
+    [SerializeField] private int min;
+
+    [SerializeField] private int max;
+
+    private float validValue;
     
-        [SerializeField][Range(4, 16)] 
-        private int numberOfNumbers = 12;
+    private void Start()
+    {
+        StartNewRound();
+        Number.RaiseClickEvent += OnValueSelected;
+    }
 
-        [SerializeField] 
-        private Gameplay gameplay;
-        
-        [SerializeField] 
-        private Formula formula;
+    private void StartNewRound()
+    {
+        validValue = formula.Generate(supportedOperators, min, max);
+        numbersContainer.Init(numberOfNumbers, validValue);
+    }
 
-        [SerializeField] 
-        private int min;
-        
-        [SerializeField] 
-        private int max;
-        
-        public void Start()
+    private void OnValueSelected(object sender, float value)
+    {
+        if (value == validValue)
         {
-            var validValue = formula.Generate(supportedOperators, min, max);
-            gameplay.Init(numberOfNumbers, validValue);
+            StartNewRound();
         }
+    }
+    
+    private void OnDisable()
+    {
+        Number.RaiseClickEvent -= OnValueSelected;
     }
 }

@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7ec5ff36924ab1aa211930e19c3893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  supportedOperators: 00000000010000000200000003000000
+  supportedOperators: 000000000100000002000000
   numberOfNumbers: 16
-  gameplay: {fileID: 0}
+  numbersContainer: {fileID: 0}
   formula: {fileID: 0}
   min: 2
   max: 5
