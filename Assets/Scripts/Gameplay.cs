@@ -16,7 +16,7 @@ public class Gameplay : MonoBehaviour
         {
             var number = Instantiate(numberPrefab, new Vector3(0, 0, 0), Quaternion.identity);
             number.transform.SetParent(container);
-            number.SetValue(i == validIndex ? validValue : Random.Range(0, 9999));
+            number.SetValue(i == validIndex ? validValue : Random.Range(0, 99));
         }
     }
 

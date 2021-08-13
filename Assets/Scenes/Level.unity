@@ -481,6 +481,10 @@ PrefabInstance:
       propertyPath: gameplay
       value: 
       objectReference: {fileID: 16676683}
+    - target: {fileID: 4999128349473633833, guid: 44f7f4e17cbd947bfadfa12c8aebad85, type: 3}
+      propertyPath: supportedOperators.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4999128349473633846, guid: 44f7f4e17cbd947bfadfa12c8aebad85, type: 3}
       propertyPath: m_Name
       value: Level1

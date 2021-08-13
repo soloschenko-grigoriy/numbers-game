@@ -25,8 +25,8 @@ namespace DefaultNamespace
         
         public void Start()
         {
-            formula.Generate(supportedOperators, min, max);
-            gameplay.Init(numberOfNumbers, 0);
+            var validValue = formula.Generate(supportedOperators, min, max);
+            gameplay.Init(numberOfNumbers, validValue);
         }
     }
 }
