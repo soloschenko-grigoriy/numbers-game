@@ -23,6 +23,7 @@ public class Level : MonoBehaviour
     {
         StartNewRound();
         Number.RaiseClickEvent += OnValueSelected;
+        Clock.RaiseReachedZero += OnClockEnds;
     }
 
     private void StartNewRound()
@@ -32,12 +33,17 @@ public class Level : MonoBehaviour
         clock.RestartTimer(clockMax);
     }
 
-    private void OnValueSelected(object sender, float value)
+    private void OnValueSelected(float value)
     {
         if (value == validValue)
         {
             StartNewRound();
         }
+    }
+    
+    private void OnClockEnds()
+    {
+        StartNewRound();
     }
     
     private void OnDisable()

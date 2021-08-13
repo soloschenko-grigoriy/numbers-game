@@ -1,10 +1,10 @@
-using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Number : MonoBehaviour
 {
-    public static event EventHandler<float> RaiseClickEvent;
+    public static event UnityAction<float> RaiseClickEvent;
     
     private TextMeshProUGUI text;
     private float value;
@@ -23,7 +23,7 @@ public class Number : MonoBehaviour
 
     public void OnClick()
     {
-        RaiseClickEvent(this, value);
+        RaiseClickEvent(value);
     }
 
     public void Kill()
