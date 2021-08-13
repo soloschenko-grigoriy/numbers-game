@@ -8,9 +8,6 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        var hasSavings = SaveLoadLocalFile.HasSavings();
-
-        Debug.Log(hasSavings);
-        continueBtn.gameObject.SetActive(hasSavings);
+        continueBtn.gameObject.SetActive(SaveLoadLocalFile.HasSavings());
     }
 }
