@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuBtn : MonoBehaviour
 {
-    public void ExitToMainMenu()
+    public void OnClick()
     {
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
