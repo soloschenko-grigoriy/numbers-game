@@ -47,5 +47,7 @@ MonoBehaviour:
   numberOfNumbers: 16
   numbersContainer: {fileID: 0}
   formula: {fileID: 0}
+  clock: {fileID: 0}
   min: 2
   max: 5
+  clockMax: 99

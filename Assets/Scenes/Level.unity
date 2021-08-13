@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &217913103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7494765876563270378, guid: 71120b7e4fc5f40aebd82b89b9b6b1b9, type: 3}
+  m_PrefabInstance: {fileID: 2740368524801562730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0445859d061540f8a39609dea815d66d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &221293716
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,6 +778,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4999128349473633833, guid: 44f7f4e17cbd947bfadfa12c8aebad85, type: 3}
+      propertyPath: clock
+      value: 
+      objectReference: {fileID: 217913103}
     - target: {fileID: 4999128349473633833, guid: 44f7f4e17cbd947bfadfa12c8aebad85, type: 3}
       propertyPath: formula
       value: 

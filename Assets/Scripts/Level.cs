@@ -1,3 +1,4 @@
+using DefaultNamespace;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -9,10 +10,12 @@ public class Level : MonoBehaviour
     [SerializeField] private NumbersContainer numbersContainer;
 
     [SerializeField] private Formula formula;
+    [SerializeField] private Clock clock;
 
     [SerializeField] private int min;
 
     [SerializeField] private int max;
+    [SerializeField] private int clockMax = 99;
 
     private float validValue;
 
@@ -26,6 +29,7 @@ public class Level : MonoBehaviour
     {
         validValue = formula.Generate(supportedOperators, min, max);
         numbersContainer.Init(numberOfNumbers, validValue);
+        clock.RestartTimer(clockMax);
     }
 
     private void OnValueSelected(object sender, float value)
